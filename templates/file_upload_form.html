@@ -1,0 +1,30 @@
+<html>
+   <body>
+      <form action = "http://127.0.0.1:5000/uploader" method = "POST"
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+          <label for="filename">FILENAME</label>
+		<input type="text" id="filename" name="filename" value="{{filename}}" readonly><br><br>
+        <label class="container">Total read and write operations
+  			<input type="checkbox" name="Op1">
+  			<span class="checkmark"></span>
+		</label>
+
+		<label class="container">read/write between 10 and 99
+  			<input type="checkbox" name="Op2">
+  			<span class="checkmark"></span>
+		</label>
+
+		<label class="container">read/write between 100ms and 1 sec
+  			<input type="checkbox" name="Op3">
+  			<span class="checkmark"></span>
+		</label>
+
+		<label class="container">read/write greater than 1 sec
+  			<input type="checkbox" name="Op4">
+  			<span class="checkmark"></span>
+		</label>
+         <input type = "submit"/>
+      </form>   
+   </body>
+</html>

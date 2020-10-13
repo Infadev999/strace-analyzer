@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>STRACE ANALYSER</title>
+</head>
+<body>
+	<form action = "http://10.75.154.16:6005/results" method = "POST" enctype = "multipart/form-data">
+	<h2>RESULTS</h2>
+	<div>
+
+		{% for i in keys %}
+		{% if i == "Total Number of READ system calls" %}
+		<p>Total read calls: {{ results['Total Number of READ system calls']}}</p>
+		{% endif %}
+		{% if i == "Total Number of WRITE system calls" %}
+		<p>Total write calls: {{ results['Total Number of WRITE system calls']}}</p>
+		{% endif %}
+		{% if i == "Read Between 10 and 99 milliseconds" %}
+		<p>Total read calls between 10 and 99ms : {{ results['Read Between 10 and 99 milliseconds']}}</p>
+		{% endif %}
+		{% if i == "Write Between 10 and 99 milliseconds" %}
+		<p>Total write calls  between 10 and 99ms : {{ results['Write Between 10 and 99 milliseconds']}}</p>
+		{% endif %}
+		{% if i == "Read Between 100 and 999 milliseconds" %}
+		<p>Total read calls between 100 and 999ms : {{ results['Read Between 100 and 999 milliseconds']}}</p>
+		{% endif %}
+		{% if i == "Write Between 100 and 999 milliseconds" %}
+		<p>Total write calls between 100 and 999ms: {{ results['Write Between 100 and 999 milliseconds']}}</p>
+		{% endif %}
+		{% if i == "Total number of system calls which took more than 1 second" %}
+		<p>Total system calls which took > 1 sec: {{ results['Total number of system calls which took more than 1 second']}}</p>
+		{% endif %}
+		{% if i == "Total number of read system calls which took more than 1 second" %}
+		<p>Total read calls which took >1 sec: {{ results['Total number of read system calls which took more than 1 second']}}</p>
+		{% endif %}
+		{% if i == "Total number of read system calls which took more than 1 second" %}
+		<p>Total write calls which took> 1 sec: {{ results['Total number of read system calls which took more than 1 second']}}</p>
+		{% endif %}
+        {% endfor %}
+    </div>
+</form>
+</body>
